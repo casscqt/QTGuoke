@@ -1,0 +1,514 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		432F86831C19374300C52446 /* QTIntro.m in Sources */ = {isa = PBXBuildFile; fileRef = 432F86821C19374300C52446 /* QTIntro.m */; };
+		4364E6101C44EAAB00E881EA /* NSString+QTString.m in Sources */ = {isa = PBXBuildFile; fileRef = 4364E60F1C44EAAB00E881EA /* NSString+QTString.m */; };
+		4364E6211C45021F00E881EA /* QTLeftViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4364E6201C45021F00E881EA /* QTLeftViewViewController.m */; };
+		4364E6241C461A0300E881EA /* QTLeftViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4364E6231C461A0300E881EA /* QTLeftViewCell.m */; };
+		4364E6271C46461600E881EA /* QTGuokeCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4364E6261C46461600E881EA /* QTGuokeCollectionController.m */; };
+		4364E62A1C4719C000E881EA /* QTGuokeArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4364E6291C4719C000E881EA /* QTGuokeArticleViewController.m */; };
+		436646711C1D63C200DE8D59 /* NSDate+QTDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 436646701C1D63C200DE8D59 /* NSDate+QTDate.m */; };
+		436646751C1F212500DE8D59 /* QTIntroFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 436646741C1F212500DE8D59 /* QTIntroFrame.m */; };
+		43A927D01C171B3200793743 /* QTGuoKeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A927C51C171B3200793743 /* QTGuoKeViewController.m */; };
+		43A927D11C171B3200793743 /* QTGuoKeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A927C91C171B3200793743 /* QTGuoKeCell.m */; };
+		43A927D21C171B3200793743 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A927CC1C171B3200793743 /* AppDelegate.m */; };
+		43A927D31C171B3200793743 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A927CD1C171B3200793743 /* main.m */; };
+		43A927D91C171B4000793743 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43A927D51C171B4000793743 /* Assets.xcassets */; };
+		43A927DA1C171B4000793743 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43A927D61C171B4000793743 /* Info.plist */; };
+		43A927DB1C171B4000793743 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43A927D71C171B4000793743 /* LaunchScreen.storyboard */; };
+		6F49B921D288A56466A1ACD0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C5C3E4F7D01417317D475039 /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		091B25A2C3F98F52EC198FF3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		432F86811C19374300C52446 /* QTIntro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTIntro.h; sourceTree = "<group>"; };
+		432F86821C19374300C52446 /* QTIntro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTIntro.m; sourceTree = "<group>"; };
+		4364E60E1C44EAAB00E881EA /* NSString+QTString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+QTString.h"; sourceTree = "<group>"; };
+		4364E60F1C44EAAB00E881EA /* NSString+QTString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+QTString.m"; sourceTree = "<group>"; };
+		4364E61F1C45021F00E881EA /* QTLeftViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTLeftViewViewController.h; sourceTree = "<group>"; };
+		4364E6201C45021F00E881EA /* QTLeftViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTLeftViewViewController.m; sourceTree = "<group>"; };
+		4364E6221C461A0300E881EA /* QTLeftViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTLeftViewCell.h; sourceTree = "<group>"; };
+		4364E6231C461A0300E881EA /* QTLeftViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTLeftViewCell.m; sourceTree = "<group>"; };
+		4364E6251C46461600E881EA /* QTGuokeCollectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTGuokeCollectionController.h; sourceTree = "<group>"; };
+		4364E6261C46461600E881EA /* QTGuokeCollectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTGuokeCollectionController.m; sourceTree = "<group>"; };
+		4364E6281C4719C000E881EA /* QTGuokeArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTGuokeArticleViewController.h; sourceTree = "<group>"; };
+		4364E6291C4719C000E881EA /* QTGuokeArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTGuokeArticleViewController.m; sourceTree = "<group>"; };
+		4366466F1C1D63C200DE8D59 /* NSDate+QTDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+QTDate.h"; sourceTree = "<group>"; };
+		436646701C1D63C200DE8D59 /* NSDate+QTDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+QTDate.m"; sourceTree = "<group>"; };
+		436646731C1F212500DE8D59 /* QTIntroFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTIntroFrame.h; sourceTree = "<group>"; };
+		436646741C1F212500DE8D59 /* QTIntroFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTIntroFrame.m; sourceTree = "<group>"; };
+		43A59B561C187B7600D5537E /* QTGuoke.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QTGuoke.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		43A927C41C171B3200793743 /* QTGuoKeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTGuoKeViewController.h; sourceTree = "<group>"; };
+		43A927C51C171B3200793743 /* QTGuoKeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTGuoKeViewController.m; sourceTree = "<group>"; };
+		43A927C81C171B3200793743 /* QTGuoKeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTGuoKeCell.h; sourceTree = "<group>"; };
+		43A927C91C171B3200793743 /* QTGuoKeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTGuoKeCell.m; sourceTree = "<group>"; };
+		43A927CB1C171B3200793743 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		43A927CC1C171B3200793743 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		43A927CD1C171B3200793743 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		43A927D51C171B4000793743 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		43A927D61C171B4000793743 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43A927D71C171B4000793743 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		43A927D81C171B4000793743 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		C5C3E4F7D01417317D475039 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D53C04333989C399C70DC0D6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		432923321C16FB6100EAED6B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F49B921D288A56466A1ACD0 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		413A497B250A2C7FB8E2FE54 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C5C3E4F7D01417317D475039 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4329232C1C16FB6100EAED6B = {
+			isa = PBXGroup;
+			children = (
+				43A927BD1C171B3200793743 /* Classes */,
+				43A927D41C171B4000793743 /* Supporting Files */,
+				43A59B561C187B7600D5537E /* QTGuoke.app */,
+				4506373A32F412FCA63CB6F6 /* Pods */,
+				413A497B250A2C7FB8E2FE54 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		436646721C1F210E00DE8D59 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				436646731C1F212500DE8D59 /* QTIntroFrame.h */,
+				436646741C1F212500DE8D59 /* QTIntroFrame.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		43A927BD1C171B3200793743 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				43A927BE1C171B3200793743 /* Category */,
+				43A927BF1C171B3200793743 /* Common */,
+				43A927C01C171B3200793743 /* Library */,
+				43A927C11C171B3200793743 /* Module */,
+				43A927CA1C171B3200793743 /* Other */,
+				43A927CE1C171B3200793743 /* Resource */,
+				43A927CF1C171B3200793743 /* Tool */,
+			);
+			name = Classes;
+			path = QTGuoke/Classes;
+			sourceTree = "<group>";
+		};
+		43A927BE1C171B3200793743 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				4364E60E1C44EAAB00E881EA /* NSString+QTString.h */,
+				4364E60F1C44EAAB00E881EA /* NSString+QTString.m */,
+				4366466F1C1D63C200DE8D59 /* NSDate+QTDate.h */,
+				436646701C1D63C200DE8D59 /* NSDate+QTDate.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		43A927BF1C171B3200793743 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		43A927C01C171B3200793743 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		43A927C11C171B3200793743 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				43A927C21C171B3200793743 /* 精选 */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		43A927C21C171B3200793743 /* 精选 */ = {
+			isa = PBXGroup;
+			children = (
+				43A927C31C171B3200793743 /* Controller */,
+				43A927C61C171B3200793743 /* Model */,
+				43A927C71C171B3200793743 /* View */,
+			);
+			path = "精选";
+			sourceTree = "<group>";
+		};
+		43A927C31C171B3200793743 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				43A927C41C171B3200793743 /* QTGuoKeViewController.h */,
+				43A927C51C171B3200793743 /* QTGuoKeViewController.m */,
+				4364E6281C4719C000E881EA /* QTGuokeArticleViewController.h */,
+				4364E6291C4719C000E881EA /* QTGuokeArticleViewController.m */,
+				4364E61F1C45021F00E881EA /* QTLeftViewViewController.h */,
+				4364E6201C45021F00E881EA /* QTLeftViewViewController.m */,
+				4364E6251C46461600E881EA /* QTGuokeCollectionController.h */,
+				4364E6261C46461600E881EA /* QTGuokeCollectionController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		43A927C61C171B3200793743 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				436646721C1F210E00DE8D59 /* ViewModel */,
+				432F86811C19374300C52446 /* QTIntro.h */,
+				432F86821C19374300C52446 /* QTIntro.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		43A927C71C171B3200793743 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				43A927C81C171B3200793743 /* QTGuoKeCell.h */,
+				43A927C91C171B3200793743 /* QTGuoKeCell.m */,
+				4364E6221C461A0300E881EA /* QTLeftViewCell.h */,
+				4364E6231C461A0300E881EA /* QTLeftViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		43A927CA1C171B3200793743 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				43A927CB1C171B3200793743 /* AppDelegate.h */,
+				43A927CC1C171B3200793743 /* AppDelegate.m */,
+				43A927CD1C171B3200793743 /* main.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		43A927CE1C171B3200793743 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		43A927CF1C171B3200793743 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		43A927D41C171B4000793743 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				43A927D51C171B4000793743 /* Assets.xcassets */,
+				43A927D61C171B4000793743 /* Info.plist */,
+				43A927D71C171B4000793743 /* LaunchScreen.storyboard */,
+				43A927D81C171B4000793743 /* PrefixHeader.pch */,
+			);
+			name = "Supporting Files";
+			path = "QTGuoke/Supporting Files";
+			sourceTree = SOURCE_ROOT;
+		};
+		4506373A32F412FCA63CB6F6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D53C04333989C399C70DC0D6 /* Pods.debug.xcconfig */,
+				091B25A2C3F98F52EC198FF3 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		432923341C16FB6100EAED6B /* QTGuoke */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4329234C1C16FB6100EAED6B /* Build configuration list for PBXNativeTarget "QTGuoke" */;
+			buildPhases = (
+				5ECBA2D4DBDA1A63E5CFAAC1 /* Check Pods Manifest.lock */,
+				432923311C16FB6100EAED6B /* Sources */,
+				432923321C16FB6100EAED6B /* Frameworks */,
+				432923331C16FB6100EAED6B /* Resources */,
+				D3B9D158EBFF15DE309A2D07 /* Embed Pods Frameworks */,
+				800DF5E62111036C9080D22F /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QTGuoke;
+			productName = QTGuoke;
+			productReference = 43A59B561C187B7600D5537E /* QTGuoke.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4329232D1C16FB6100EAED6B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = QT;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = Cass;
+				TargetAttributes = {
+					432923341C16FB6100EAED6B = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = 579YKGP6HQ;
+					};
+				};
+			};
+			buildConfigurationList = 432923301C16FB6100EAED6B /* Build configuration list for PBXProject "QTGuoke" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4329232C1C16FB6100EAED6B;
+			productRefGroup = 4329232C1C16FB6100EAED6B;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				432923341C16FB6100EAED6B /* QTGuoke */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		432923331C16FB6100EAED6B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43A927DB1C171B4000793743 /* LaunchScreen.storyboard in Resources */,
+				43A927DA1C171B4000793743 /* Info.plist in Resources */,
+				43A927D91C171B4000793743 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5ECBA2D4DBDA1A63E5CFAAC1 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		800DF5E62111036C9080D22F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D3B9D158EBFF15DE309A2D07 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		432923311C16FB6100EAED6B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43A927D11C171B3200793743 /* QTGuoKeCell.m in Sources */,
+				43A927D01C171B3200793743 /* QTGuoKeViewController.m in Sources */,
+				4364E6241C461A0300E881EA /* QTLeftViewCell.m in Sources */,
+				432F86831C19374300C52446 /* QTIntro.m in Sources */,
+				4364E6211C45021F00E881EA /* QTLeftViewViewController.m in Sources */,
+				4364E6271C46461600E881EA /* QTGuokeCollectionController.m in Sources */,
+				436646711C1D63C200DE8D59 /* NSDate+QTDate.m in Sources */,
+				4364E62A1C4719C000E881EA /* QTGuokeArticleViewController.m in Sources */,
+				4364E6101C44EAAB00E881EA /* NSString+QTString.m in Sources */,
+				43A927D31C171B3200793743 /* main.m in Sources */,
+				43A927D21C171B3200793743 /* AppDelegate.m in Sources */,
+				436646751C1F212500DE8D59 /* QTIntroFrame.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		4329234A1C16FB6100EAED6B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4329234B1C16FB6100EAED6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4329234D1C16FB6100EAED6B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D53C04333989C399C70DC0D6 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PREFIX_HEADER = "${SRCROOT}/QTGuoke/Supporting Files/PrefixHeader.pch";
+				INFOPLIST_FILE = "/Users/Cass/Desktop/tmp/QTGuoke/QTGuoke/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cass.QTGuoker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4329234E1C16FB6100EAED6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 091B25A2C3F98F52EC198FF3 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PREFIX_HEADER = "${SRCROOT}/QTGuoke/Supporting Files/PrefixHeader.pch";
+				INFOPLIST_FILE = "/Users/Cass/Desktop/tmp/QTGuoke/QTGuoke/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cass.QTGuoker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		432923301C16FB6100EAED6B /* Build configuration list for PBXProject "QTGuoke" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4329234A1C16FB6100EAED6B /* Debug */,
+				4329234B1C16FB6100EAED6B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4329234C1C16FB6100EAED6B /* Build configuration list for PBXNativeTarget "QTGuoke" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4329234D1C16FB6100EAED6B /* Debug */,
+				4329234E1C16FB6100EAED6B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4329232D1C16FB6100EAED6B /* Project object */;
+}
