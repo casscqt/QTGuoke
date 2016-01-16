@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		432F86831C19374300C52446 /* QTIntro.m in Sources */ = {isa = PBXBuildFile; fileRef = 432F86821C19374300C52446 /* QTIntro.m */; };
+		433E273F1C49D8C300FE1537 /* QTDBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 433E273E1C49D8C300FE1537 /* QTDBTool.m */; };
 		4364E6101C44EAAB00E881EA /* NSString+QTString.m in Sources */ = {isa = PBXBuildFile; fileRef = 4364E60F1C44EAAB00E881EA /* NSString+QTString.m */; };
 		4364E6211C45021F00E881EA /* QTLeftViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4364E6201C45021F00E881EA /* QTLeftViewViewController.m */; };
 		4364E6241C461A0300E881EA /* QTLeftViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4364E6231C461A0300E881EA /* QTLeftViewCell.m */; };
@@ -29,6 +30,8 @@
 		091B25A2C3F98F52EC198FF3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		432F86811C19374300C52446 /* QTIntro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTIntro.h; sourceTree = "<group>"; };
 		432F86821C19374300C52446 /* QTIntro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTIntro.m; sourceTree = "<group>"; };
+		433E273D1C49D8C300FE1537 /* QTDBTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTDBTool.h; sourceTree = "<group>"; };
+		433E273E1C49D8C300FE1537 /* QTDBTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTDBTool.m; sourceTree = "<group>"; };
 		4364E60E1C44EAAB00E881EA /* NSString+QTString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+QTString.h"; sourceTree = "<group>"; };
 		4364E60F1C44EAAB00E881EA /* NSString+QTString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+QTString.m"; sourceTree = "<group>"; };
 		4364E61F1C45021F00E881EA /* QTLeftViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTLeftViewViewController.h; sourceTree = "<group>"; };
@@ -213,6 +216,8 @@
 		43A927CF1C171B3200793743 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				433E273D1C49D8C300FE1537 /* QTDBTool.h */,
+				433E273E1C49D8C300FE1537 /* QTDBTool.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -372,6 +377,7 @@
 				4364E6101C44EAAB00E881EA /* NSString+QTString.m in Sources */,
 				43A927D31C171B3200793743 /* main.m in Sources */,
 				43A927D21C171B3200793743 /* AppDelegate.m in Sources */,
+				433E273F1C49D8C300FE1537 /* QTDBTool.m in Sources */,
 				436646751C1F212500DE8D59 /* QTIntroFrame.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
