@@ -20,6 +20,8 @@
 #import "CHTCollectionViewWaterfallLayout.h"
 #import "IIViewDeckController.h"
 #import "FMDB.h"
+#import "QTDBTool.h"
+
 #import "NSDate+QTDate.h"
 #import "NSString+QTString.h"
 
