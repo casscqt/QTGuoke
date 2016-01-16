@@ -10,7 +10,7 @@
 
 @interface QTGuokeArticleViewController : UIViewController
 
-- (instancetype)initWithUrl:(NSString *)url;
+- (instancetype)initWithId:(NSString *)id;
 
 
 @end
