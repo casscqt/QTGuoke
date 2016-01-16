@@ -8,8 +8,10 @@
 
 #import "QTGuokeArticleViewController.h"
 
-@interface QTGuokeArticleViewController ()<UIWebViewDelegate>
+@interface QTGuokeArticleViewController ()<UIWebViewDelegate,UIScrollViewDelegate>
 @property (nonatomic,strong) NSString *url;
+@property (nonatomic,strong) UIButton *likeBtn;
+
 @end
 
 @implementation QTGuokeArticleViewController
@@ -31,7 +33,7 @@
     
     [self setUpNavigationBarItems];
     
-
+    
 
 }
 
@@ -56,6 +58,38 @@
 }
 
 
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+
+    static float lastOffY  = 0;
+    float curOffY = scrollView.contentOffset.y;
+    
+    if (scrollView.frame.size.height >= scrollView.contentSize.height ||     //内容高度低于scrollView高度，不隐藏
+        fabs(curOffY)  +KScreenSize.height> scrollView.contentSize.height || //拉至最底部时，不做处理
+        curOffY < 0                                                          //拉至最顶部时，不做处理
+        )
+    {
+        return;
+    }
+    if (curOffY - lastOffY > 40)
+    {
+        //向上
+        lastOffY = curOffY;
+        self.navigationController.navigationBar.hidden = YES;
+        
+    }
+    else if(lastOffY -curOffY >40)
+    {
+        //向下
+        lastOffY = curOffY;
+        self.navigationController.navigationBar.hidden = NO;
+    }
+}
+
+
+
+
 #pragma mark -按钮响应
 - (void)pushBack
 {
@@ -69,11 +103,27 @@
 
 }
 
+
+- (void)touchLikeBtn
+{
+    self.likeBtn.selected = !self.likeBtn.selected;
+    
+    if (self.likeBtn.selected) {
+        
+    }else{
+    
+    }
+
+
+}
+
 - (void)setChildView
 {
     
     UIWebView *webview = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, KScreenSize.width, KScreenSize.height-50)];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.url]];
+    webview.delegate = self;
+    webview.scrollView.delegate = self;
     [self.view addSubview:webview];
     [webview loadRequest:request];
     
@@ -86,10 +136,10 @@
     
     UIButton *commentBtn = [[UIButton alloc]init];
     UIButton *shareBtn = [[UIButton alloc]init];
-    UIButton *likeBtn = [[UIButton alloc]init];
+
 
     [footView addSubview:commentBtn];
-    [footView addSubview:likeBtn];
+    [footView addSubview:self.likeBtn];
     [footView addSubview:shareBtn];
     [self.view addSubview:footView];
     //commentBtn
@@ -116,25 +166,35 @@
     //forwardBtn
     [shareBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(footView);
-        make.right.equalTo(likeBtn.mas_left).with.offset(-15);
+        make.right.equalTo(self.likeBtn.mas_left).with.offset(-15);
 
     }];
     [shareBtn setImage:[UIImage imageNamed:@"article_btn_share"] forState:UIControlStateNormal];
-    [shareBtn setImage:[UIImage imageNamed:@"article_btn_share_press"] forState:UIControlStateHighlighted];
+    [shareBtn setImage:[UIImage imageNamed:@"article_btn_share_press"] forState:UIControlStateSelected];
     
     //likeBtn
-    [likeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.likeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(footView);
         make.right.equalTo(footView).with.offset(-15);
 
     }];
-    [likeBtn setImage:[UIImage imageNamed:@"article_btn_like"] forState:UIControlStateNormal];
-    [likeBtn setImage:[UIImage imageNamed:@"article_btn_like_press"] forState:UIControlStateHighlighted];
+    [self.likeBtn addTarget:self action:@selector(touchLikeBtn) forControlEvents:UIControlEventTouchUpInside];
+    [self.likeBtn setImage:[UIImage imageNamed:@"article_btn_like"] forState:UIControlStateNormal];
+    [self.likeBtn setImage:[UIImage imageNamed:@"article_btn_like_press"] forState:UIControlStateSelected];
     
     
 
 
     
+}
+
+
+-(UIButton *)likeBtn{
+    if (!_likeBtn) {
+        _likeBtn = [[UIButton alloc]init];
+    }
+    return _likeBtn;
+
 }
 
 @end
