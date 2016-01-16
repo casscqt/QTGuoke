@@ -189,7 +189,7 @@
 {
     QTIntroFrame *introF = self.introFArr[indexPath.row];
     QTIntro *intro = introF.intro;
-    QTGuokeArticleViewController *articleVc = [[QTGuokeArticleViewController alloc]initWithUrl:intro.link_v2];
+    QTGuokeArticleViewController *articleVc = [[QTGuokeArticleViewController alloc]initWithId:intro.id];
     [self.navigationController pushViewController:articleVc animated:YES];
 
 }
