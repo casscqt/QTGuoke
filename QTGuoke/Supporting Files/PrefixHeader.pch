@@ -19,7 +19,7 @@
 //#import "MBProgressHUD.h"
 #import "CHTCollectionViewWaterfallLayout.h"
 #import "IIViewDeckController.h"
-
+#import "FMDB.h"
 #import "NSDate+QTDate.h"
 #import "NSString+QTString.h"
 
