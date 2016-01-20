@@ -7,7 +7,7 @@
 //
 
 #import "QTDBTool.h"
-#import "QTArticle.h"
+#import "QTIntro.h"
 
 @interface QTDBTool()
 @property (nonatomic,strong) FMDatabase *dataBase;
@@ -68,20 +68,20 @@ static QTDBTool *dbTool = nil;
 }
 
 #pragma mark - 插入数据和删除数据
-- (void)likeArticle:(QTArticle *)article
+- (void)likeArticle:(QTIntro *)intro
 {
     NSString *insertSQL = @"insert into article_like (article_id, title, source_name, summary, date_picked) values (?, ?, ?, ?, ?)";
-    if ([_dataBase executeUpdate:insertSQL, article.id, article.title, article.source_name, article.summary, article.date_picked]) {
+    if ([_dataBase executeUpdate:insertSQL, intro.id, intro.title, intro.source_name, intro.summary, intro.date_picked]) {
         NSLog(@"成功添加收藏");
     }else{
         NSLog(@"失败添加收藏");
     }
 }
 
-- (void)unlikeArticle:(QTArticle *)article
+- (void)unlikeArticle:(QTIntro *)intro
 {
-    NSString * deleteSQL = @"delete from article_like where article_id = ?";
-    if ([_dataBase executeUpdate:deleteSQL, article.id]) {
+    NSString *deleteSQL = @"delete from article_like where article_id = ?";
+    if ([_dataBase executeUpdate:deleteSQL, intro.id]) {
         NSLog(@"成功取消收藏");
     }else{
         NSLog(@"失败取消收藏");
@@ -89,11 +89,30 @@ static QTDBTool *dbTool = nil;
 }
 
 #pragma mark -查询数据
-- (BOOL)isExistArticleWithId:(NSString *)article_id
+- (BOOL)isExistArticleWithId:(NSString *)intro_id
 {
-    NSString * querySQL = @"select * from article_like where article_id = ?";
+    NSString *querySQL = @"select * from article_like where article_id = ?";
 
-    return [[_dataBase executeQuery:querySQL,article_id]next];
+    return [[_dataBase executeQuery:querySQL,intro_id]next];
+}
+
+- (NSMutableArray *)readArticle
+{
+
+    NSMutableArray *mutableArr = [NSMutableArray array];
+    
+    NSString *querySQL = @"select * from article_like";
+    FMResultSet *set = [_dataBase executeQuery:querySQL];
+    while ([set next]) {
+        QTIntro *intro = [[QTIntro alloc]init];
+        intro.id = [set stringForColumn:@"article_id"];
+        intro.title = [set stringForColumn:@"title"];
+        intro.source_name = [set stringForColumn:@"source_name"];
+        intro.summary = [set stringForColumn:@"summary"];
+        intro.date_picked = [set stringForColumn:@"date_picked"];
+        [mutableArr addObject:intro];
+    }
+    return mutableArr;
 }
 
 @end

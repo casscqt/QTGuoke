@@ -1,18 +1,18 @@
 //
-//  QTGuokeCollectionController.m
+//  QTCommentViewController.m
 //  QTGuoke
 //
-//  Created by Cass on 16/1/13.
+//  Created by Cass on 16/1/20.
 //  Copyright © 2016年 Cass. All rights reserved.
 //
 
-#import "QTGuokeCollectionController.h"
+#import "QTCommentViewController.h"
 
-@interface QTGuokeCollectionController ()
+@interface QTCommentViewController ()
 
 @end
 
-@implementation QTGuokeCollectionController
+@implementation QTCommentViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

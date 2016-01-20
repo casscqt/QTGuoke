@@ -10,10 +10,11 @@
 		432F86831C19374300C52446 /* QTIntro.m in Sources */ = {isa = PBXBuildFile; fileRef = 432F86821C19374300C52446 /* QTIntro.m */; };
 		433E273F1C49D8C300FE1537 /* QTDBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 433E273E1C49D8C300FE1537 /* QTDBTool.m */; };
 		433E27421C4A2E5000FE1537 /* QTArticle.m in Sources */ = {isa = PBXBuildFile; fileRef = 433E27411C4A2E5000FE1537 /* QTArticle.m */; };
+		433E274C1C4B8C6600FE1537 /* QTCollecCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 433E274B1C4B8C6600FE1537 /* QTCollecCell.m */; };
+		433E274F1C4B97F000FE1537 /* QTGuokeCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 433E274E1C4B97F000FE1537 /* QTGuokeCollectionController.m */; };
 		4364E6101C44EAAB00E881EA /* NSString+QTString.m in Sources */ = {isa = PBXBuildFile; fileRef = 4364E60F1C44EAAB00E881EA /* NSString+QTString.m */; };
 		4364E6211C45021F00E881EA /* QTLeftViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4364E6201C45021F00E881EA /* QTLeftViewViewController.m */; };
 		4364E6241C461A0300E881EA /* QTLeftViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4364E6231C461A0300E881EA /* QTLeftViewCell.m */; };
-		4364E6271C46461600E881EA /* QTGuokeCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4364E6261C46461600E881EA /* QTGuokeCollectionController.m */; };
 		4364E62A1C4719C000E881EA /* QTGuokeArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4364E6291C4719C000E881EA /* QTGuokeArticleViewController.m */; };
 		436646711C1D63C200DE8D59 /* NSDate+QTDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 436646701C1D63C200DE8D59 /* NSDate+QTDate.m */; };
 		436646751C1F212500DE8D59 /* QTIntroFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 436646741C1F212500DE8D59 /* QTIntroFrame.m */; };
@@ -24,6 +25,7 @@
 		43A927D91C171B4000793743 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43A927D51C171B4000793743 /* Assets.xcassets */; };
 		43A927DA1C171B4000793743 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43A927D61C171B4000793743 /* Info.plist */; };
 		43A927DB1C171B4000793743 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43A927D71C171B4000793743 /* LaunchScreen.storyboard */; };
+		43E99C6A1C4FCB7900FE10A1 /* QTCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E99C691C4FCB7900FE10A1 /* QTCommentViewController.m */; };
 		6F49B921D288A56466A1ACD0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C5C3E4F7D01417317D475039 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -35,14 +37,16 @@
 		433E273E1C49D8C300FE1537 /* QTDBTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTDBTool.m; sourceTree = "<group>"; };
 		433E27401C4A2E5000FE1537 /* QTArticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTArticle.h; sourceTree = "<group>"; };
 		433E27411C4A2E5000FE1537 /* QTArticle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTArticle.m; sourceTree = "<group>"; };
+		433E274A1C4B8C6600FE1537 /* QTCollectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTCollectCell.h; sourceTree = "<group>"; };
+		433E274B1C4B8C6600FE1537 /* QTCollecCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTCollecCell.m; sourceTree = "<group>"; };
+		433E274D1C4B97F000FE1537 /* QTGuokeCollectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTGuokeCollectionController.h; sourceTree = "<group>"; };
+		433E274E1C4B97F000FE1537 /* QTGuokeCollectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTGuokeCollectionController.m; sourceTree = "<group>"; };
 		4364E60E1C44EAAB00E881EA /* NSString+QTString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+QTString.h"; sourceTree = "<group>"; };
 		4364E60F1C44EAAB00E881EA /* NSString+QTString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+QTString.m"; sourceTree = "<group>"; };
 		4364E61F1C45021F00E881EA /* QTLeftViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTLeftViewViewController.h; sourceTree = "<group>"; };
 		4364E6201C45021F00E881EA /* QTLeftViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTLeftViewViewController.m; sourceTree = "<group>"; };
 		4364E6221C461A0300E881EA /* QTLeftViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTLeftViewCell.h; sourceTree = "<group>"; };
 		4364E6231C461A0300E881EA /* QTLeftViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTLeftViewCell.m; sourceTree = "<group>"; };
-		4364E6251C46461600E881EA /* QTGuokeCollectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTGuokeCollectionController.h; sourceTree = "<group>"; };
-		4364E6261C46461600E881EA /* QTGuokeCollectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTGuokeCollectionController.m; sourceTree = "<group>"; };
 		4364E6281C4719C000E881EA /* QTGuokeArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTGuokeArticleViewController.h; sourceTree = "<group>"; };
 		4364E6291C4719C000E881EA /* QTGuokeArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTGuokeArticleViewController.m; sourceTree = "<group>"; };
 		4366466F1C1D63C200DE8D59 /* NSDate+QTDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+QTDate.h"; sourceTree = "<group>"; };
@@ -61,6 +65,8 @@
 		43A927D61C171B4000793743 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43A927D71C171B4000793743 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43A927D81C171B4000793743 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		43E99C681C4FCB7900FE10A1 /* QTCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTCommentViewController.h; sourceTree = "<group>"; };
+		43E99C691C4FCB7900FE10A1 /* QTCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTCommentViewController.m; sourceTree = "<group>"; };
 		C5C3E4F7D01417317D475039 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D53C04333989C399C70DC0D6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -96,6 +102,41 @@
 			);
 			sourceTree = "<group>";
 		};
+		433E27451C4B8BC900FE1537 /* 收藏 */ = {
+			isa = PBXGroup;
+			children = (
+				433E27471C4B8C3200FE1537 /* Controller */,
+				433E27481C4B8C3200FE1537 /* Model */,
+				433E27491C4B8C3200FE1537 /* View */,
+			);
+			path = "收藏";
+			sourceTree = "<group>";
+		};
+		433E27471C4B8C3200FE1537 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				433E274D1C4B97F000FE1537 /* QTGuokeCollectionController.h */,
+				433E274E1C4B97F000FE1537 /* QTGuokeCollectionController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		433E27481C4B8C3200FE1537 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		433E27491C4B8C3200FE1537 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				433E274A1C4B8C6600FE1537 /* QTCollectCell.h */,
+				433E274B1C4B8C6600FE1537 /* QTCollecCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		436646721C1F210E00DE8D59 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -110,7 +151,6 @@
 			children = (
 				43A927BE1C171B3200793743 /* Category */,
 				43A927BF1C171B3200793743 /* Common */,
-				43A927C01C171B3200793743 /* Library */,
 				43A927C11C171B3200793743 /* Module */,
 				43A927CA1C171B3200793743 /* Other */,
 				43A927CE1C171B3200793743 /* Resource */,
@@ -138,16 +178,10 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
-		43A927C01C171B3200793743 /* Library */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Library;
-			sourceTree = "<group>";
-		};
 		43A927C11C171B3200793743 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				433E27451C4B8BC900FE1537 /* 收藏 */,
 				43A927C21C171B3200793743 /* 精选 */,
 			);
 			path = Module;
@@ -172,8 +206,6 @@
 				4364E6291C4719C000E881EA /* QTGuokeArticleViewController.m */,
 				4364E61F1C45021F00E881EA /* QTLeftViewViewController.h */,
 				4364E6201C45021F00E881EA /* QTLeftViewViewController.m */,
-				4364E6251C46461600E881EA /* QTGuokeCollectionController.h */,
-				4364E6261C46461600E881EA /* QTGuokeCollectionController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -197,6 +229,8 @@
 				43A927C91C171B3200793743 /* QTGuoKeCell.m */,
 				4364E6221C461A0300E881EA /* QTLeftViewCell.h */,
 				4364E6231C461A0300E881EA /* QTLeftViewCell.m */,
+				43E99C681C4FCB7900FE10A1 /* QTCommentViewController.h */,
+				43E99C691C4FCB7900FE10A1 /* QTCommentViewController.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -376,15 +410,17 @@
 				4364E6241C461A0300E881EA /* QTLeftViewCell.m in Sources */,
 				432F86831C19374300C52446 /* QTIntro.m in Sources */,
 				4364E6211C45021F00E881EA /* QTLeftViewViewController.m in Sources */,
-				4364E6271C46461600E881EA /* QTGuokeCollectionController.m in Sources */,
 				436646711C1D63C200DE8D59 /* NSDate+QTDate.m in Sources */,
 				433E27421C4A2E5000FE1537 /* QTArticle.m in Sources */,
+				433E274C1C4B8C6600FE1537 /* QTCollecCell.m in Sources */,
 				4364E62A1C4719C000E881EA /* QTGuokeArticleViewController.m in Sources */,
 				4364E6101C44EAAB00E881EA /* NSString+QTString.m in Sources */,
 				43A927D31C171B3200793743 /* main.m in Sources */,
+				43E99C6A1C4FCB7900FE10A1 /* QTCommentViewController.m in Sources */,
 				43A927D21C171B3200793743 /* AppDelegate.m in Sources */,
 				433E273F1C49D8C300FE1537 /* QTDBTool.m in Sources */,
 				436646751C1F212500DE8D59 /* QTIntroFrame.m in Sources */,
+				433E274F1C4B97F000FE1537 /* QTGuokeCollectionController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

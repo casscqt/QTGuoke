@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-@class QTArticle;
+@class QTIntro;
 @interface QTDBTool : NSObject
 + (instancetype)shareDB;
 
-- (BOOL)isExistArticleWithId:(NSString *)article_id;
-- (void)likeArticle:(QTArticle *)article;
-- (void)unlikeArticle:(QTArticle *)article;
+- (BOOL)isExistArticleWithId:(NSString *)intro_id;
+- (void)likeArticle:(QTIntro *)intro;
+- (void)unlikeArticle:(QTIntro *)intro;
+- (NSMutableArray *)readArticle;
 @end

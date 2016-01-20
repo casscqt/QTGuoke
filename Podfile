@@ -6,4 +6,5 @@ pod 'AFNetworking', '~> 3.0.4'
 pod 'Masonry', '~> 0.6.3'
 pod 'ViewDeck', '~> 2.4.1'
 pod 'MJExtension','~>3.0.9'
-pod 'FMDB'
+pod 'FMDB’
+pod 'MBProgressHUD', '~> 0.9.2'

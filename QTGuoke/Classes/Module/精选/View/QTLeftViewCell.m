@@ -18,7 +18,7 @@ static CGFloat const kMenuIconAndTitleSpace      = 10;
 
 static CGFloat const kIndicatorWidthAndHeight    = 20;
 
-static CGFloat kBottomLineHeight                 = 2;
+static CGFloat const kBottomLineHeight           = 2;
 
 @interface QTLeftViewCell()
 

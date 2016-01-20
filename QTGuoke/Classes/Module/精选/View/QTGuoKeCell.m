@@ -19,15 +19,15 @@
 
 @implementation QTGuoKeCell
 
-//重写构造方法，让自定义的cell创建出来就有4个子控件
-- (instancetype)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-
-    }
-    return self;
-}
+////重写构造方法，让自定义的cell创建出来就有4个子控件
+//- (instancetype)initWithFrame:(CGRect)frame
+//{
+//    self = [super initWithFrame:frame];
+//    if (self) {
+//
+//    }
+//    return self;
+//}
 
 
 
