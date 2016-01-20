@@ -25,7 +25,8 @@
 		43A927D91C171B4000793743 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43A927D51C171B4000793743 /* Assets.xcassets */; };
 		43A927DA1C171B4000793743 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43A927D61C171B4000793743 /* Info.plist */; };
 		43A927DB1C171B4000793743 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43A927D71C171B4000793743 /* LaunchScreen.storyboard */; };
-		43E99C6A1C4FCB7900FE10A1 /* QTCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E99C691C4FCB7900FE10A1 /* QTCommentViewController.m */; };
+		43E99C6D1C4FCE6500FE10A1 /* QTCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E99C6C1C4FCE6500FE10A1 /* QTCommentViewController.m */; };
+		43E99C701C4FE90C00FE10A1 /* QTComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E99C6F1C4FE90C00FE10A1 /* QTComment.m */; };
 		6F49B921D288A56466A1ACD0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C5C3E4F7D01417317D475039 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -65,8 +66,10 @@
 		43A927D61C171B4000793743 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43A927D71C171B4000793743 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43A927D81C171B4000793743 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		43E99C681C4FCB7900FE10A1 /* QTCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTCommentViewController.h; sourceTree = "<group>"; };
-		43E99C691C4FCB7900FE10A1 /* QTCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTCommentViewController.m; sourceTree = "<group>"; };
+		43E99C6B1C4FCE6500FE10A1 /* QTCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTCommentViewController.h; sourceTree = "<group>"; };
+		43E99C6C1C4FCE6500FE10A1 /* QTCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTCommentViewController.m; sourceTree = "<group>"; };
+		43E99C6E1C4FE90C00FE10A1 /* QTComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTComment.h; sourceTree = "<group>"; };
+		43E99C6F1C4FE90C00FE10A1 /* QTComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTComment.m; sourceTree = "<group>"; };
 		C5C3E4F7D01417317D475039 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D53C04333989C399C70DC0D6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -206,6 +209,8 @@
 				4364E6291C4719C000E881EA /* QTGuokeArticleViewController.m */,
 				4364E61F1C45021F00E881EA /* QTLeftViewViewController.h */,
 				4364E6201C45021F00E881EA /* QTLeftViewViewController.m */,
+				43E99C6B1C4FCE6500FE10A1 /* QTCommentViewController.h */,
+				43E99C6C1C4FCE6500FE10A1 /* QTCommentViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -218,6 +223,8 @@
 				432F86821C19374300C52446 /* QTIntro.m */,
 				433E27401C4A2E5000FE1537 /* QTArticle.h */,
 				433E27411C4A2E5000FE1537 /* QTArticle.m */,
+				43E99C6E1C4FE90C00FE10A1 /* QTComment.h */,
+				43E99C6F1C4FE90C00FE10A1 /* QTComment.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -229,8 +236,6 @@
 				43A927C91C171B3200793743 /* QTGuoKeCell.m */,
 				4364E6221C461A0300E881EA /* QTLeftViewCell.h */,
 				4364E6231C461A0300E881EA /* QTLeftViewCell.m */,
-				43E99C681C4FCB7900FE10A1 /* QTCommentViewController.h */,
-				43E99C691C4FCB7900FE10A1 /* QTCommentViewController.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -414,9 +419,10 @@
 				433E27421C4A2E5000FE1537 /* QTArticle.m in Sources */,
 				433E274C1C4B8C6600FE1537 /* QTCollecCell.m in Sources */,
 				4364E62A1C4719C000E881EA /* QTGuokeArticleViewController.m in Sources */,
+				43E99C701C4FE90C00FE10A1 /* QTComment.m in Sources */,
 				4364E6101C44EAAB00E881EA /* NSString+QTString.m in Sources */,
 				43A927D31C171B3200793743 /* main.m in Sources */,
-				43E99C6A1C4FCB7900FE10A1 /* QTCommentViewController.m in Sources */,
+				43E99C6D1C4FCE6500FE10A1 /* QTCommentViewController.m in Sources */,
 				43A927D21C171B3200793743 /* AppDelegate.m in Sources */,
 				433E273F1C49D8C300FE1537 /* QTDBTool.m in Sources */,
 				436646751C1F212500DE8D59 /* QTIntroFrame.m in Sources */,

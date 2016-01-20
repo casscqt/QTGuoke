@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "QTGuoKeViewController.h"
 #import "QTLeftViewViewController.h"
-#import "QTNavigationController.h"
+
 
 
 @interface AppDelegate ()

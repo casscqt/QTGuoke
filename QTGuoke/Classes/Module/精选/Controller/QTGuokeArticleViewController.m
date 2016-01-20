@@ -8,6 +8,7 @@
 
 #import "QTGuokeArticleViewController.h"
 #import "QTIntro.h"
+#import "QTCommentViewController.h"
 
 @interface QTGuokeArticleViewController ()<UIWebViewDelegate,UIScrollViewDelegate>
 @property (nonatomic,copy) NSString *id;
@@ -120,6 +121,8 @@
 
 - (void)pushToCommentVc
 {
+    QTCommentViewController *commentVc = [[QTCommentViewController alloc]init];
+    [self.navigationController pushViewController:commentVc animated:YES];
 
 }
 

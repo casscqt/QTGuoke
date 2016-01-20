@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface QTCommentViewController : UITableViewController
+@interface QTCommentViewController : UIViewController
 
 @end
