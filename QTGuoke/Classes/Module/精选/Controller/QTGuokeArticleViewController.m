@@ -7,22 +7,22 @@
 //
 
 #import "QTGuokeArticleViewController.h"
-#import "QTArticle.h"
+#import "QTIntro.h"
 
 @interface QTGuokeArticleViewController ()<UIWebViewDelegate,UIScrollViewDelegate>
 @property (nonatomic,copy) NSString *id;
 @property (nonatomic,strong) UIButton *likeBtn;
-@property (nonatomic,strong) QTArticle *article;
+@property (nonatomic,strong) QTIntro *intro;
 
 @end
 
 @implementation QTGuokeArticleViewController
 
-- (instancetype)initWithId:(NSString *)id
+- (instancetype)initWithIntro:(QTIntro *)intro
 {
     self = [super init];
     if (self) {
-        self.id = id;
+        self.intro = intro;
     }
     return self;
 }
@@ -37,44 +37,27 @@
     
     [self setUpNavigationBarItems];
     
-    [self getArticleInfo];
+
 
 }
 
 
-#pragma mark
-- (void)getArticleInfo
-{
-    //1.创建请求者
-    AFHTTPSessionManager *manger = [AFHTTPSessionManager manager];
-    //2.创建一个字典
-    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    
-    params[@"pick_id"] = self.id;
-
-    //4.发送请求
-    [manger GET:@"http://apis.guokr.com/handpick/article.json" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSArray *resultArr = [NSArray array];
-        resultArr = [QTArticle mj_objectArrayWithKeyValuesArray:responseObject[@"result"]];
-        self.article = [resultArr lastObject];
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"%@",error);
-    }];
-    
-
-}
 
 
+
+
+#pragma mark -
+//检查收藏按钮状态
 - (void)checkLikeBtnStatus
 {
-    if ([[QTDBTool shareDB] isExistArticleWithId:self.id]) {
+    if ([[QTDBTool shareDB] isExistArticleWithId:self.intro.id]) {
         self.likeBtn.selected = YES;
     }else{
         self.likeBtn.selected = NO;
     }
 }
 
+//设置导航栏按钮
 - (void)setUpNavigationBarItems
 {
     UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -140,15 +123,23 @@
 
 }
 
-
+//点击收藏与取消收藏
 - (void)touchLikeBtn
 {
+    MBProgressHUD *hub = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hub.mode = MBProgressHUDModeText;
+    
     self.likeBtn.selected = !self.likeBtn.selected;
     
     if (self.likeBtn.selected) {
-        [[QTDBTool shareDB] likeArticle:self.article];
+        [[QTDBTool shareDB] likeArticle:self.intro];
+        hub.labelText = @"收藏成功";
+        [hub hide:YES afterDelay:0.5];
+
     }else{
-        [[QTDBTool shareDB] unlikeArticle:self.article];
+        [[QTDBTool shareDB] unlikeArticle:self.intro];
+        hub.labelText = @"取消收藏";
+        [hub hide:YES afterDelay:0.5];
     }
 }
 
@@ -156,7 +147,7 @@
 {
     
     UIWebView *webview = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, KScreenSize.width, KScreenSize.height-50)];
-    NSString *urlString = [NSString stringWithFormat:@"http://jingxuan.guokr.com/pick/v2/%@",self.id];
+    NSString *urlString = [NSString stringWithFormat:@"http://jingxuan.guokr.com/pick/v2/%@",self.intro.id];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
     webview.delegate = self;
     webview.scrollView.delegate = self;
@@ -232,13 +223,4 @@
     return _likeBtn;
 
 }
-
-- (QTArticle *)article
-{
-    if (!_article) {
-        _article = [[QTArticle alloc]init];
-    }
-    return _article;
-}
-
 @end

@@ -11,4 +11,5 @@
 @interface QTLeftViewViewController : UIViewController
 
 @property (nonatomic,strong) UITableView *leftTableView;
+@property (nonatomic,strong) UINavigationController *firstVc;
 @end

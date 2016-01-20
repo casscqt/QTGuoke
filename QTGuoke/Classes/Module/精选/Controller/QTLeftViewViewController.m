@@ -8,8 +8,18 @@
 
 #import "QTLeftViewViewController.h"
 #import "QTLeftViewCell.h"
-
+#import "QTGuoKeViewController.h"
 #import "QTGuokeCollectionController.h"
+
+typedef NS_ENUM(NSUInteger,QTSelectedMenuState) {
+    QTSelectedMenuStateMain = 0,
+    QTSelectedMenuStateCollect,
+    QTSelectedMenuStateSetting,
+    QTSelectedMenuStateContact,
+    QTSelectedMenuStateEValuate
+};
+
+
 
 @interface QTLeftViewViewController ()<UITableViewDelegate,UITableViewDataSource,IIViewDeckControllerDelegate>
 @property (nonatomic,strong) NSArray *menuTitles;
@@ -18,12 +28,17 @@
 @property (nonatomic,strong) NSMutableArray *menuStateArray;
 
 
+
+
 @end
 
 @implementation QTLeftViewViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+
+//    [self addChildViewController:self.firstVc];
 
     [self setUpLeftView];
 
@@ -41,6 +56,8 @@
     leftTableView.delegate = self;
     leftTableView.dataSource = self;
     
+    
+
     self.leftTableView = leftTableView;
     [self.view addSubview:leftTableView];
 }
@@ -84,19 +101,31 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self.viewDeckController toggleLeftViewAnimated:YES];
-    if (indexPath.row == 0) {
-        
-    }else if (indexPath.row == 1){
-        QTGuokeCollectionController *collectionVc = [[QTGuokeCollectionController alloc]init];
-        collectionVc.view.backgroundColor = [UIColor greenColor];
-        self.viewDeckController.centerController = nil;
-        self.viewDeckController.centerController = collectionVc;
-    }else if (indexPath.row == 2){
-        
-    
-    }
 
+
+    switch (indexPath.row) {
+        case QTSelectedMenuStateMain:
+            self.viewDeckController.centerController = self.firstVc;
+            break;
+            
+        case QTSelectedMenuStateCollect:{
+            QTGuokeCollectionController *collectVc = [[QTGuokeCollectionController alloc]init];
+            UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:collectVc];
+            self.viewDeckController.centerController = nav;
+            break;
+        }
+        case QTSelectedMenuStateContact:
+            
+            break;
+            
+        case QTSelectedMenuStateSetting:
+            
+            break;
+            
+        case QTSelectedMenuStateEValuate:
+            
+            break;
+    }
     
     
 
@@ -108,7 +137,13 @@
     }
     [self.menuStateArray replaceObjectAtIndex:indexPath.row withObject:@"highLight"];
     [self.leftTableView reloadData];
+    [self.viewDeckController toggleLeftViewAnimated:YES];
+}
 
+
+-(void)addChildViewController:(UIViewController *)childController
+{
+    [super addChildViewController:childController];
 }
 
 - (UITableView *)leftTableView{
@@ -145,5 +180,13 @@
     return _menuStateArray;
 }
 
+- (UINavigationController *)firstVc
+{
+    if (!_firstVc) {
+        QTGuoKeViewController *guokeVc = [[QTGuoKeViewController alloc]init];
+        _firstVc = [[UINavigationController alloc]initWithRootViewController:guokeVc];
+    }
+    return _firstVc;
+}
 
 @end

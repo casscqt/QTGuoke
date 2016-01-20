@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class QTIntro;
 @interface QTGuokeArticleViewController : UIViewController
 
-- (instancetype)initWithId:(NSString *)id;
+- (instancetype)initWithIntro:(QTIntro *)intro;
 
 
 @end
