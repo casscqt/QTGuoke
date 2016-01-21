@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		432DD2051C50A89E008E05EE /* QTCommentViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 432DD2041C50A89E008E05EE /* QTCommentViewCell.m */; };
 		432F86831C19374300C52446 /* QTIntro.m in Sources */ = {isa = PBXBuildFile; fileRef = 432F86821C19374300C52446 /* QTIntro.m */; };
 		433E273F1C49D8C300FE1537 /* QTDBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 433E273E1C49D8C300FE1537 /* QTDBTool.m */; };
 		433E27421C4A2E5000FE1537 /* QTArticle.m in Sources */ = {isa = PBXBuildFile; fileRef = 433E27411C4A2E5000FE1537 /* QTArticle.m */; };
 		433E274C1C4B8C6600FE1537 /* QTCollecCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 433E274B1C4B8C6600FE1537 /* QTCollecCell.m */; };
 		433E274F1C4B97F000FE1537 /* QTGuokeCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 433E274E1C4B97F000FE1537 /* QTGuokeCollectionController.m */; };
+		435FF7E91C5105AD00E65F79 /* QTCommentModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 435FF7E81C5105AD00E65F79 /* QTCommentModalViewController.m */; };
 		4364E6101C44EAAB00E881EA /* NSString+QTString.m in Sources */ = {isa = PBXBuildFile; fileRef = 4364E60F1C44EAAB00E881EA /* NSString+QTString.m */; };
 		4364E6211C45021F00E881EA /* QTLeftViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4364E6201C45021F00E881EA /* QTLeftViewViewController.m */; };
 		4364E6241C461A0300E881EA /* QTLeftViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4364E6231C461A0300E881EA /* QTLeftViewCell.m */; };
@@ -32,6 +34,8 @@
 
 /* Begin PBXFileReference section */
 		091B25A2C3F98F52EC198FF3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		432DD2031C50A89E008E05EE /* QTCommentViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTCommentViewCell.h; sourceTree = "<group>"; };
+		432DD2041C50A89E008E05EE /* QTCommentViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTCommentViewCell.m; sourceTree = "<group>"; };
 		432F86811C19374300C52446 /* QTIntro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTIntro.h; sourceTree = "<group>"; };
 		432F86821C19374300C52446 /* QTIntro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTIntro.m; sourceTree = "<group>"; };
 		433E273D1C49D8C300FE1537 /* QTDBTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTDBTool.h; sourceTree = "<group>"; };
@@ -42,6 +46,8 @@
 		433E274B1C4B8C6600FE1537 /* QTCollecCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTCollecCell.m; sourceTree = "<group>"; };
 		433E274D1C4B97F000FE1537 /* QTGuokeCollectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTGuokeCollectionController.h; sourceTree = "<group>"; };
 		433E274E1C4B97F000FE1537 /* QTGuokeCollectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTGuokeCollectionController.m; sourceTree = "<group>"; };
+		435FF7E71C5105AD00E65F79 /* QTCommentModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTCommentModalViewController.h; sourceTree = "<group>"; };
+		435FF7E81C5105AD00E65F79 /* QTCommentModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTCommentModalViewController.m; sourceTree = "<group>"; };
 		4364E60E1C44EAAB00E881EA /* NSString+QTString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+QTString.h"; sourceTree = "<group>"; };
 		4364E60F1C44EAAB00E881EA /* NSString+QTString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+QTString.m"; sourceTree = "<group>"; };
 		4364E61F1C45021F00E881EA /* QTLeftViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTLeftViewViewController.h; sourceTree = "<group>"; };
@@ -211,6 +217,8 @@
 				4364E6201C45021F00E881EA /* QTLeftViewViewController.m */,
 				43E99C6B1C4FCE6500FE10A1 /* QTCommentViewController.h */,
 				43E99C6C1C4FCE6500FE10A1 /* QTCommentViewController.m */,
+				435FF7E71C5105AD00E65F79 /* QTCommentModalViewController.h */,
+				435FF7E81C5105AD00E65F79 /* QTCommentModalViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -236,6 +244,8 @@
 				43A927C91C171B3200793743 /* QTGuoKeCell.m */,
 				4364E6221C461A0300E881EA /* QTLeftViewCell.h */,
 				4364E6231C461A0300E881EA /* QTLeftViewCell.m */,
+				432DD2031C50A89E008E05EE /* QTCommentViewCell.h */,
+				432DD2041C50A89E008E05EE /* QTCommentViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -413,11 +423,13 @@
 				43A927D11C171B3200793743 /* QTGuoKeCell.m in Sources */,
 				43A927D01C171B3200793743 /* QTGuoKeViewController.m in Sources */,
 				4364E6241C461A0300E881EA /* QTLeftViewCell.m in Sources */,
+				432DD2051C50A89E008E05EE /* QTCommentViewCell.m in Sources */,
 				432F86831C19374300C52446 /* QTIntro.m in Sources */,
 				4364E6211C45021F00E881EA /* QTLeftViewViewController.m in Sources */,
 				436646711C1D63C200DE8D59 /* NSDate+QTDate.m in Sources */,
 				433E27421C4A2E5000FE1537 /* QTArticle.m in Sources */,
 				433E274C1C4B8C6600FE1537 /* QTCollecCell.m in Sources */,
+				435FF7E91C5105AD00E65F79 /* QTCommentModalViewController.m in Sources */,
 				4364E62A1C4719C000E881EA /* QTGuokeArticleViewController.m in Sources */,
 				43E99C701C4FE90C00FE10A1 /* QTComment.m in Sources */,
 				4364E6101C44EAAB00E881EA /* NSString+QTString.m in Sources */,

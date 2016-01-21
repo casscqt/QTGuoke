@@ -67,8 +67,8 @@ static CGFloat const kBottomLineHeight           = 1;
     
     [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self).with.offset(15);
-        make.left.equalTo(self).with.offset(15);
-        make.right.equalTo(self).with.offset(-15);
+        make.left.equalTo(self).with.offset(KCellEdgeMargin);
+        make.right.equalTo(self).with.offset(-KCellEdgeMargin);
         make.height.mas_equalTo(@20);
     }];
     

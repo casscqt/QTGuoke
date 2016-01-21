@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface QTCommentViewController : UIViewController
-
+- (instancetype)initWithId:(NSString *)Id;
 @end

@@ -28,6 +28,7 @@
 #define KScreenSize [UIScreen mainScreen].bounds.size
 #define KScreenMargin 10
 #define kViewDeckLeftSize 150
+#define KCellEdgeMargin 15
 
 
 

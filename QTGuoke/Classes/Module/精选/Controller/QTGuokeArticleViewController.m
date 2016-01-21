@@ -121,7 +121,7 @@
 
 - (void)pushToCommentVc
 {
-    QTCommentViewController *commentVc = [[QTCommentViewController alloc]init];
+    QTCommentViewController *commentVc = [[QTCommentViewController alloc]initWithId:self.intro.id];
     [self.navigationController pushViewController:commentVc animated:YES];
 
 }

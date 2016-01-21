@@ -8,14 +8,28 @@
 
 #import "QTCommentViewController.h"
 #import "QTComment.h"
+#import "QTCommentViewCell.h"
+
 
 @interface QTCommentViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,strong) NSArray *commentArr;
+@property (nonatomic,copy) NSString *id;
 
 @end
 
 @implementation QTCommentViewController
+
+- (instancetype)initWithId:(NSString *)Id
+{
+    self = [super init];
+    if (self) {
+        self.id = Id;
+    }
+    
+    return self;
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -23,11 +37,17 @@
     self.tableView = [[UITableView alloc]initWithFrame:self.view.frame];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    self.tableView.frame = CGRectMake(0, 0, KScreenSize.width, KScreenSize.height-50);
+    self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
     [self.view addSubview:self.tableView];
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
+    // 注册cell
+    [self.tableView registerClass:[QTCommentViewCell class] forCellReuseIdentifier:@"commentCell"];
+    
     [self setUpNavigationItem];
     [self setUpBottomView];
+    
+    [self sendRequest];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -52,24 +72,61 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+
+
+#pragma mark -请求
+//http://apis.guokr.com/handpick/reply.json?article_id=17179
+
+//初次请求
+- (void)sendRequest
+{
+
+    
+    //1.创建请求者
+    AFHTTPSessionManager *manger = [AFHTTPSessionManager manager];
+    //2.创建一个字典
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    
+    params[@"article_id"] = self.id;
+
+    
+    //4.发送请求
+    [manger GET:@"http://apis.guokr.com/handpick/reply.json" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        NSArray *commentArr = [NSArray array];
+        commentArr = [QTComment mj_objectArrayWithKeyValuesArray:responseObject[@"result"]];
+        self.commentArr = commentArr;
+        [self.tableView reloadData];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"%@",error);
+    }];
+    
+    
+}
+
+
+
+
 #pragma mark - Table view data source
 
-
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return self.commentArr.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"commentCell" forIndexPath:indexPath];
+    QTCommentViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"commentCell" forIndexPath:indexPath];
     
-    // Configure the cell...
-    
+    cell.comment = self.commentArr[indexPath.row];
+
     return cell;
 }
 
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 80;
+}
 
 /*
 // Override to support conditional editing of the table view.
@@ -125,8 +182,7 @@
 #pragma mark -设置默认空图
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    UIView *nullView = [[UIView alloc]initWithFrame:self.view.frame];
-    
+    UIView *nullView = [[UIView alloc]init];
     UIImageView *imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"comment_sofa"]];
     UILabel *label = [[UILabel alloc]init];
     
@@ -148,8 +204,8 @@
         make.height.equalTo(@30);
         
     }];
-    nullView.backgroundColor = [UIColor greenColor];
-    self.tableView.bounces = NO;
+
+
 
     return nullView;
 }
@@ -157,8 +213,10 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     if (self.commentArr.count == 0) {
-        return KScreenSize.height -64;
+        self.tableView.bounces = NO;
+        return KScreenSize.height -64 -50;
     }else{
+        self.tableView.bounces = YES;
         return 0;
     }
 }
