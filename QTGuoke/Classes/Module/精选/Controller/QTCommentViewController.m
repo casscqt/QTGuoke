@@ -10,9 +10,8 @@
 #import "QTComment.h"
 #import "QTCommentViewCell.h"
 
-float heightText;
-float currentLineNum=1;
-CGFloat currentHeight=40;
+
+CGFloat currentHeight;
 
 @interface QTCommentViewController ()<UITableViewDataSource,UITableViewDelegate,UITextViewDelegate>
 @property (nonatomic,strong) UITableView *tableView;
@@ -41,11 +40,7 @@ CGFloat currentHeight=40;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    
-    NSDictionary *dict=@{NSFontAttributeName:[UIFont systemFontOfSize:20.0]};
-    CGSize contentSize=[@"我" sizeWithAttributes:dict];
-    heightText=contentSize.height;
+    currentHeight =40;
     
     self.tableView = [[UITableView alloc]initWithFrame:self.view.frame];
     self.tableView.dataSource = self;
@@ -69,7 +64,13 @@ CGFloat currentHeight=40;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
 }
 
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 
+    NSLog(@"-------dealooc");
+    
+}
 
 - (void)keyboardWillChangeFrame:(NSNotification *)note
 {
@@ -79,8 +80,9 @@ CGFloat currentHeight=40;
     
     CGFloat transformY = keyboardFrame.origin.y - self.view.frame.size.height ;
     
+    __weak __typeof(self) weakSelf = self;
     [UIView animateWithDuration:duration animations:^{
-        self.commentView.transform = CGAffineTransformMakeTranslation(0, transformY);
+        weakSelf.commentView.transform = CGAffineTransformMakeTranslation(0, transformY);
     }];
     
 
@@ -88,10 +90,7 @@ CGFloat currentHeight=40;
 }
 
 
--(void)dealloc
-{
-//    [NSNotificationCenter defaultCenter]re
-}
+
 
 - (void)setUpNavigationItem
 {
@@ -115,6 +114,7 @@ CGFloat currentHeight=40;
 #pragma mark -请求
 //http://apis.guokr.com/handpick/reply.json?article_id=17179
 
+
 //初次请求
 - (void)sendRequest
 {
@@ -127,14 +127,14 @@ CGFloat currentHeight=40;
     
     params[@"article_id"] = self.id;
 
-    
+    __weak __typeof(self) weakSelf = self;
     //4.发送请求
     [manger GET:@"http://apis.guokr.com/handpick/reply.json" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         NSArray *commentArr = [NSArray array];
         commentArr = [QTComment mj_objectArrayWithKeyValuesArray:responseObject[@"result"]];
-        self.commentArr = commentArr;
-        [self.tableView reloadData];
+        weakSelf.commentArr = commentArr;
+        [weakSelf.tableView reloadData];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"%@",error);
     }];
@@ -262,6 +262,8 @@ CGFloat currentHeight=40;
     self.commentView = commentView;
     [self.view addSubview:commentView];
     
+    
+
     //commmentLabel
     [commentTextField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(commentView);
