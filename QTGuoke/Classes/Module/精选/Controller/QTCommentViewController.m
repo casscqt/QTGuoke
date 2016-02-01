@@ -12,6 +12,7 @@
 
 float heightText;
 float currentLineNum=1;
+CGFloat currentHeight=40;
 
 @interface QTCommentViewController ()<UITableViewDataSource,UITableViewDelegate,UITextViewDelegate>
 @property (nonatomic,strong) UITableView *tableView;
@@ -20,6 +21,7 @@ float currentLineNum=1;
 
 @property (nonatomic,strong) UIView *commentView;
 @property (nonatomic,strong) UITextView *commentTextField;
+
 
 
 @end
@@ -164,10 +166,6 @@ float currentLineNum=1;
     return 80;
 }
 
-//- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-//{
-//    [self.commentTextField resignFirstResponder];
-//}
 
 
 #pragma mark -底部评论条
@@ -209,27 +207,32 @@ float currentLineNum=1;
 #pragma mark - textView
 -(void)textViewDidChange:(UITextView *)textView
 {
-//默认文本框显示一行文字
-    float textViewWidth = self.commentTextField.frame.size.width;//取得文本框高度
-    NSString *content = textView.text;
-    NSDictionary *dict= @{NSFontAttributeName:[UIFont systemFontOfSize:20]};
-    CGSize contentSize=[content sizeWithAttributes:dict];//计算文字长度
-    float numLine = ceilf(contentSize.width/textViewWidth); //计算当前文字长度对应的行数
+
+    CGFloat newHeight = self.commentTextField.contentSize.height;
     
     
-    if(numLine > currentLineNum ){
+    if (currentHeight > 100) {
+        return;
+    }
+    
+    if(currentHeight < newHeight ){
         //如果发现当前文字长度对应的行数超过。 文本框高度，则先调整当前view的高度和位置，然后调整输入框的高度，最后修改currentLineNum的值
-        self.commentView.frame = CGRectMake(self.commentView.frame.origin.x, self.commentView.frame.origin.y-heightText*(numLine-currentLineNum), self.commentView.frame.size.width, self.commentView.frame.size.height+heightText*(numLine-currentLineNum));
-        textView.frame = CGRectMake(textView.frame.origin.x, textView.frame.origin.y, textView.frame.size.width, textView.frame.size.height+heightText*(numLine-currentLineNum));
-        currentLineNum = numLine;
-    }else if (numLine<currentLineNum ){
+        self.commentView.frame = CGRectMake(self.commentView.frame.origin.x, self.commentView.frame.origin.y-(newHeight - currentHeight), self.commentView.frame.size.width, self.commentView.frame.size.height+(newHeight - currentHeight));
+        textView.frame = CGRectMake(textView.frame.origin.x, textView.frame.origin.y, textView.frame.size.width, textView.frame.size.height+(newHeight - currentHeight));
+        currentHeight = newHeight;
+    }else if (currentHeight > newHeight ){
         //次数为删除的时候检测文字行数减少的时候
-        self.commentView.frame = CGRectMake(self.commentView.frame.origin.x, self.commentView.frame.origin.y+heightText*(currentLineNum-numLine), self.commentView.frame.size.width, self.commentView.frame.size.height-heightText*(currentLineNum-numLine));
-        textView.frame = CGRectMake(textView.frame.origin.x, textView.frame.origin.y, textView.frame.size.width, textView.frame.size.height-heightText*(currentLineNum-numLine));
-        currentLineNum = numLine;
+        self.commentView.frame = CGRectMake(self.commentView.frame.origin.x, self.commentView.frame.origin.y+(currentHeight-newHeight), self.commentView.frame.size.width, self.commentView.frame.size.height-(currentHeight-newHeight));
+        textView.frame = CGRectMake(textView.frame.origin.x, textView.frame.origin.y, textView.frame.size.width, textView.frame.size.height-(currentHeight-newHeight));
+        currentHeight = newHeight;
     }
     
 }
+
+
+
+
+
 
 - (void)pushCommentView
 {
@@ -244,8 +247,6 @@ float currentLineNum=1;
 
     UITextView *commentTextField = [[UITextView alloc]init];
     UIButton *commentBtn = [[UIButton alloc]init];
-//    commentTextField.leftView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 10, 0)];
-//    commentTextField.leftViewMode = UITextFieldViewModeAlways;
     commentTextField.backgroundColor = [UIColor greenColor];
     commentTextField.delegate = self;
     commentTextField.scrollEnabled = YES;
@@ -256,6 +257,8 @@ float currentLineNum=1;
     [commentView addSubview:commentTextField];
     [commentView addSubview:commentBtn];
     self.commentTextField = commentTextField;
+    
+
     self.commentView = commentView;
     [self.view addSubview:commentView];
     
@@ -283,6 +286,7 @@ float currentLineNum=1;
     [commentBtn setTitle:@"发表" forState:UIControlStateNormal];
 
 }
+
 
 #pragma mark -设置默认空图
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
