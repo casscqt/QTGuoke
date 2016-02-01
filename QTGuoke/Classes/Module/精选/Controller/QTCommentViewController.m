@@ -10,11 +10,17 @@
 #import "QTComment.h"
 #import "QTCommentViewCell.h"
 
+float heightText;
+float currentLineNum=1;
 
-@interface QTCommentViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface QTCommentViewController ()<UITableViewDataSource,UITableViewDelegate,UITextViewDelegate>
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,strong) NSArray *commentArr;
 @property (nonatomic,copy) NSString *id;
+
+@property (nonatomic,strong) UIView *commentView;
+@property (nonatomic,strong) UITextView *commentTextField;
+
 
 @end
 
@@ -34,6 +40,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    
+    NSDictionary *dict=@{NSFontAttributeName:[UIFont systemFontOfSize:20.0]};
+    CGSize contentSize=[@"我" sizeWithAttributes:dict];
+    heightText=contentSize.height;
+    
     self.tableView = [[UITableView alloc]initWithFrame:self.view.frame];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
@@ -45,14 +56,39 @@
     [self.tableView registerClass:[QTCommentViewCell class] forCellReuseIdentifier:@"commentCell"];
     
     [self setUpNavigationItem];
+
+    [self setUpCommentView];
     [self setUpBottomView];
     
     [self sendRequest];
+    
+    
+    //注册监听
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+
+- (void)keyboardWillChangeFrame:(NSNotification *)note
+{
+    CGFloat duration = [note.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    
+    CGRect keyboardFrame = [note.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    
+    CGFloat transformY = keyboardFrame.origin.y - self.view.frame.size.height ;
+    
+    [UIView animateWithDuration:duration animations:^{
+        self.commentView.transform = CGAffineTransformMakeTranslation(0, transformY);
+    }];
+    
+
+//    NSLog(@"%@",note);
+}
+
+
+-(void)dealloc
+{
+//    [NSNotificationCenter defaultCenter]re
 }
 
 - (void)setUpNavigationItem
@@ -128,30 +164,17 @@
     return 80;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
+//- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+//{
+//    [self.commentTextField resignFirstResponder];
+//}
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
 
 #pragma mark -底部评论条
 - (void)setUpBottomView
 {
     UIView *footView = [[UIView alloc]initWithFrame:CGRectMake(0, KScreenSize.height-50, KScreenSize.width, 50)];
+
     footView.backgroundColor = [UIColor colorWithRed:240.0/255 green:240.0/255 blue:240.0/255 alpha:1];
     
     UIButton *commentBtn = [[UIButton alloc]init];
@@ -167,6 +190,7 @@
         
     }];
     
+    [commentBtn addTarget:self action:@selector(pushCommentView) forControlEvents:UIControlEventTouchDown];
     [commentBtn setAdjustsImageWhenHighlighted:NO];
     [commentBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     commentBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
@@ -177,6 +201,87 @@
     UIImage *image2 = [UIImage imageNamed:@"comment_btn_send_disabled"];
     image2 = [image2 stretchableImageWithLeftCapWidth:floorf(image2.size.width/2) topCapHeight:floorf(image2.size.height/2)];
     [commentBtn setBackgroundImage:image2 forState:UIControlStateNormal];
+}
+
+
+
+
+#pragma mark - textView
+-(void)textViewDidChange:(UITextView *)textView
+{
+//默认文本框显示一行文字
+    float textViewWidth = self.commentTextField.frame.size.width;//取得文本框高度
+    NSString *content = textView.text;
+    NSDictionary *dict= @{NSFontAttributeName:[UIFont systemFontOfSize:20]};
+    CGSize contentSize=[content sizeWithAttributes:dict];//计算文字长度
+    float numLine = ceilf(contentSize.width/textViewWidth); //计算当前文字长度对应的行数
+    
+    
+    if(numLine > currentLineNum ){
+        //如果发现当前文字长度对应的行数超过。 文本框高度，则先调整当前view的高度和位置，然后调整输入框的高度，最后修改currentLineNum的值
+        self.commentView.frame = CGRectMake(self.commentView.frame.origin.x, self.commentView.frame.origin.y-heightText*(numLine-currentLineNum), self.commentView.frame.size.width, self.commentView.frame.size.height+heightText*(numLine-currentLineNum));
+        textView.frame = CGRectMake(textView.frame.origin.x, textView.frame.origin.y, textView.frame.size.width, textView.frame.size.height+heightText*(numLine-currentLineNum));
+        currentLineNum = numLine;
+    }else if (numLine<currentLineNum ){
+        //次数为删除的时候检测文字行数减少的时候
+        self.commentView.frame = CGRectMake(self.commentView.frame.origin.x, self.commentView.frame.origin.y+heightText*(currentLineNum-numLine), self.commentView.frame.size.width, self.commentView.frame.size.height-heightText*(currentLineNum-numLine));
+        textView.frame = CGRectMake(textView.frame.origin.x, textView.frame.origin.y, textView.frame.size.width, textView.frame.size.height-heightText*(currentLineNum-numLine));
+        currentLineNum = numLine;
+    }
+    
+}
+
+- (void)pushCommentView
+{
+    [self.commentTextField becomeFirstResponder];
+}
+
+
+- (void)setUpCommentView
+{
+    UIView *commentView = [[UIView alloc]initWithFrame:CGRectMake(0, KScreenSize.height -50, KScreenSize.width, 50)];
+    commentView.backgroundColor = [UIColor colorWithRed:240.0/255 green:240.0/255 blue:240.0/255 alpha:1];
+
+    UITextView *commentTextField = [[UITextView alloc]init];
+    UIButton *commentBtn = [[UIButton alloc]init];
+//    commentTextField.leftView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 10, 0)];
+//    commentTextField.leftViewMode = UITextFieldViewModeAlways;
+    commentTextField.backgroundColor = [UIColor greenColor];
+    commentTextField.delegate = self;
+    commentTextField.scrollEnabled = YES;
+    commentTextField.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+    commentTextField.backgroundColor = [UIColor grayColor];
+    commentTextField.font = [UIFont systemFontOfSize:20];
+    commentBtn.backgroundColor = [UIColor redColor];
+    [commentView addSubview:commentTextField];
+    [commentView addSubview:commentBtn];
+    self.commentTextField = commentTextField;
+    self.commentView = commentView;
+    [self.view addSubview:commentView];
+    
+    //commmentLabel
+    [commentTextField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(commentView);
+        make.left.equalTo(commentView.mas_left).with.offset(10);
+        make.right.equalTo(commentBtn.mas_left).with.offset(-10);
+        make.top.equalTo(commentView).with.offset(10);
+        make.bottom.equalTo(commentView).with.offset(-10);
+    }];
+    
+    //commentBtn
+    [commentBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(commentView);
+        make.right.equalTo(commentView).with.offset(-10);
+        make.width.equalTo(@60);
+        make.top.equalTo(commentTextField);
+        make.bottom.equalTo(commentTextField);
+    }];
+    
+//    [commentBtn addTarget:self action:@selector(pushCommentView) forControlEvents:UIControlEventTouchDown];
+    [commentBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+    commentBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
+    [commentBtn setTitle:@"发表" forState:UIControlStateNormal];
+
 }
 
 #pragma mark -设置默认空图
